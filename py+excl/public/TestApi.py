@@ -13,14 +13,14 @@ class testApi(object):
         # 根据不同的访问方式来访问接口
         if self.method == 'post':
             try:
-                r = requests.post(self.url, data=json.dumps(eval(self.data)), timeout=5)
+                r = requests.post(self.url, data=json.dumps(self.data))
                 return r
             except TimeoutError:
                 print("Time out!")
                 # self.logger.error("Time out!")
         elif self.method == 'get':
             try:
-                r = requests.get(self.url, params=eval(self.data), timeout=5)
+                r = requests.get(self.url, params=eval(self.data))
                 return r
             except TimeoutError:
                 print("Time out!")

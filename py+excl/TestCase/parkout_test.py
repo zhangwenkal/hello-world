@@ -19,10 +19,13 @@ class testparkout(unittest.TestCase):
             api = testApi(method[i], url[i], data[i])
             apicode = api.getCode()
             apijson = api.getJson()
-            if apicode==code[i] and apicode==result[i]  :
-                print('{}、{}:测试成功。json数据为:{}'.format(i + 1, name[i], apijson))
-            else:
-                print('{}、{}:测试失败'.format(i + 1, name[i]))
+            # if apicode==code[i] and apijson==result[i]  :
+            #     print('{}、{}:测试成功。json数据为:{}'.format(i + 1, name[i], apijson))
+            # else:
+            #     print('{}、{}:测试失败'.format(i + 1, name[i]))
+            if apicode==code[i]:
+                self.assertEqual(apijson, json.loads(result[i]))
+
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
