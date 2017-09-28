@@ -4,7 +4,6 @@ from xlrd import open_workbook
 proDir=os.path.join(os.path.dirname(__file__),os.path.pardir)
 proDir=os.path.abspath(proDir)
 
-
 class readExcel(object):
     def __init__(self, xls_name,sheet_name):
         xlspath=os.path.join(proDir,'TestFile','case',xls_name)
