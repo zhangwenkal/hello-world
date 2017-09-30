@@ -18,7 +18,7 @@ class testparkout(unittest.TestCase):
         row = excel.getRows
         for i in range(0, row - 1):
             if i==0:
-                api = testApi(method[i], url[i],data[i])
+                api = testApi(method[i], url[i],data[i],'')
                 api_cookie=api.getCookie()
             else:
                 api = testApi(method[i],url[i],data[i],cookies=api_cookie)
