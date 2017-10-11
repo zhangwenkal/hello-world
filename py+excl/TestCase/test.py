@@ -6,5 +6,7 @@ s = requests.Session()
 s.post("http://127.0.0.1:8080/jsds/security/app/login.do", data=payload)
 
 print(s.cookies['JSESSIONID'])
+print(s.text)
+
 #print(type(s.cookies))
 
