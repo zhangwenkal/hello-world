@@ -13,13 +13,13 @@ class testApi(object):
     def testApi(self):
         # 根据不同的访问方式来访问接口
         if self.method == 'post':
-            try:
-                r=requests.post(self.url,data=eval(self.data),cookies=self.cookies)
-                return r
+            r=requests.post(self.url,data=eval(self.data),cookies=self.cookies)
+            return r
+
             # except TimeoutError as ex:
             #     print('')
             #     print("Time out!")
-            #     # self.logger.error("Time out!")
+            #     self.logger.error("Time out!")
         elif self.method == 'get':
             try:
                 r = requests.get(self.url, params=eval(self.data))
@@ -36,7 +36,7 @@ class testApi(object):
 
     def getJson(self):
         # 获取返回信息的json数据
-        json_data = self.testApi.text
+        json_data = self.testApi.json()
         return json_data
 
 class testcookie():

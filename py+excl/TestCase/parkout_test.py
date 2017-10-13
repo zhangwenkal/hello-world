@@ -32,7 +32,7 @@ class testparkout(unittest.TestCase):
                     log.info('获取响应状态')
                     apijson = api.getJson()
                     log.info('获取响应值')
-                except TimeoutError as ex:
+                except Exception as ex:
                     log.info(str(ex))
             # if apicode==code[i] and apijson==result[i]  :
             #     print('{}、{}:测试成功。json数据为:{}'.format(i + 1, name[i], apijson))
