@@ -32,16 +32,15 @@ class testparkout(unittest.TestCase):
                     log.info('获取响应状态')
                     apijson = api.getJson()
                     log.info('获取响应值')
+                    if apicode==code[i]:
+                        self.assertEqual(apijson['actualBalanceTotal'], eval(result[i])['actualBalanceTotal'])  #eval,json.loads字符串转换成字典
+                        log.info('对比响应结果')
                 except Exception as ex:
-                    log.info(str(ex))
+                    log.error(str(ex))
             # if apicode==code[i] and apijson==result[i]  :
             #     print('{}、{}:测试成功。json数据为:{}'.format(i + 1, name[i], apijson))
             # else:
             #     print('{}、{}:测试失败'.format(i + 1, name[i]))
-                if apicode==code[i]:
-                    self.assertEqual(apijson, json.loads(result[i]))
-                    log.info('对比响应结果')
-
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
