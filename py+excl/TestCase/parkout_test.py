@@ -19,7 +19,7 @@ class testparkout(unittest.TestCase):
         result=excel.getResult
         code = excel.getCode
         row = excel.getRows
-        for i in range(0, row - 1):
+        for i in range(0, row-1):
             if i==0:
                 api = testcookie(method[i], url[i],data[i])
                 global api_cookie

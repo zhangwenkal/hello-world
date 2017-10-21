@@ -8,7 +8,7 @@ class LogHelper():
     def __init__(self,logger_name):
         self.logger_name=logger_name
         self.info_path=''.join([LOG_PATH,'info.log'])
-        self.error_parh=''.join([LOG_PATH,"erroe.log"])
+        self.error_parh=''.join([LOG_PATH,"error.log"])
 
     def add_loger(self):
         """
