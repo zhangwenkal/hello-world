@@ -13,7 +13,15 @@ def title(titles):
 		<meta charset="UTF-8">
 		<title>%s</title>
 		<style type="text/css">
-			td{ width:40px; height:50px;}
+			 * {
+            margin: 0;
+            padding: 0;
+        }
+        p {
+            width: 500px;
+            padding: 10px 20px;
+            word-break:break-all;
+        }
 		</style>
 	</head>
 	<body>
@@ -65,13 +73,13 @@ def ceshixiangqing(id,name,key,coneent,url,meth,yuqi,json,relust):
             <td>%s</td>
        
             <td>%s</td>
-            <td>%s
+            <td><p class="p1">%s</p>
            </td>
+            <td><p>%s</p></td>
             <td>%s</td>
             <td>%s</td>
             <td>%s</td>
-            <td>%s</td>
-            %s
+               %s
         </tr>
         
     '''%(id,name,key,coneent,url,meth,yuqi,json,passfail(relust))
