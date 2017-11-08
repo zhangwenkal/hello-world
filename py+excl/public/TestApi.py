@@ -51,8 +51,8 @@ class testcookie():
         if self.method == 'post':
             try:
                 r = requests.Session()
-                r.post(self.url,data=eval(self.data))
-                return r
+                r1=r.post(self.url,data=eval(self.data))
+                return r,r1
             except TimeoutError:
                 print("Time out!")
                 # self.logger.error("Time out!")
@@ -65,5 +65,10 @@ class testcookie():
 
     def getCookie(self):
         # 获取返回信息的cookie
-        cookie = self.testcookie.cookies
+        cookie = self.testcookie[0].cookies
         return cookie
+
+    def getCode(self):
+        # 获取返回信息的cookie
+        code = self.testcookie[1].status_code
+        return code
