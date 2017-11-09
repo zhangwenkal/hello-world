@@ -12,23 +12,34 @@ def title(titles):
 	<head>
 		<meta charset="UTF-8">
 		<title>%s</title>
-		<style type="text/css">
-			 * {
-            margin: 0;
-            padding: 0;
-        }
-        p {
-            width: 500px;
-            padding: 10px 20px;
-            word-break:break-all;
-        }
+
+        <link href="../bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="../bootstrap/bootstrap-table.css" rel="stylesheet">
+        <script src="../bootstrap/jquery-3.0.0.js" type="text/javascript"></script>
+        <script src="../bootstrap/bootstrap.js"></script>
+        <script src="../bootstrap/bootstrap-table.js"></script>
+        <script src="../bootstrap/bootstrap-table-zh-CN.js"></script>
+        		<style type="text/css">
+            table{
+                table-layout: fixed;border='2'cellspacing='1' cellpadding='1'
+
+            }
+            th:nth-child(1),th:nth-child(2),th:nth-child(3),th:nth-child(6),th:nth-child(9){
+                width: 75px;
+            }
+            td{
+                word-wrap:break-word
+            }
+
 		</style>
+
 	</head>
 	<body>
 	'''%(titles)
 	return title
 connent='''
-<div style='width: 1170px;margin-left: 15%'>
+<div class="container">
+<div>
 <h1>接口测试的结果</h1>'''
 def time(starttime,endtime,passge,fail):
 	beijing='''
@@ -45,7 +56,8 @@ shanghai='''
 
 
         <p>&nbsp;</p>
-        <table border='2'cellspacing='1' cellpadding='1' width='1100'align="center" >
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered" >
 		<tr >
             <td ><strong>用例ID&nbsp;</strong></td>
             <td><strong>用例名字</strong></td>
@@ -86,6 +98,8 @@ def ceshixiangqing(id,name,key,coneent,url,meth,yuqi,json,relust):
     return xiangqing
 weibu='''
 	</table>
+	</div>
+	</div>
     </body>
     </html>'''
 def relust(titles,starttime,endtime,passge,fail,id,name,key,coneent,url,meth,yuqi,json,relust):
