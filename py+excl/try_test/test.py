@@ -19,3 +19,6 @@ print(r.json())
 # print(s.cookies['JSESSIONID'])
 #print(s.cookies)
 
+a = 0.3214323
+print ("%.2f%%" % (a * 100))
+

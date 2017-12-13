@@ -49,8 +49,9 @@ def time(starttime,endtime,passge,fail):
 		<p><strong>结果:</strong>
 			<span >Pass: <strong >%s</strong>
 			Fail: <strong >%s</strong>
+			Pass_rate:<strong >%.2f%%</strong>
 			        </span></p>                  
-			    <p ><strong>测试详情如下</strong></p>  </div> '''%(starttime,endtime,(endtime-starttime),passge,fail)
+			    <p ><strong>测试详情如下</strong></p>  </div> '''%(starttime,endtime,(endtime-starttime),passge,fail,100*passge/(passge+fail))
 	return beijing
 shanghai='''
 
