@@ -1,30 +1,33 @@
 __author__ = 'Administrator'
 #coding=utf-8
-import pymysql
-import readConfig as Reconfig
+import pymysql,sys
+import common.readConfig as Reconfig
+import sys
+sys.path.insert(1,"..")
 
 localReadingConfig=Reconfig.ReadConfig()
 
 class MyDB():
-    global host,username,password,port,database,config
-    host=localReadingConfig.get_DB('DATABASE1','host')
-    username=localReadingConfig.get_DB('DATABASE1','username')
-    password=localReadingConfig.get_DB('DATABASE1','password')
-    port=localReadingConfig.get_DB('DATABASE1','port')
-    database=localReadingConfig.get_DB('DATABASE1','database')
-    config={
-        'host':str(host),
-        'user':username,
-        'password':password,
-        'port':int(port),
-        'db':database
-    }
 
-    def __init__(self):
-        self.log=Log.get_log()
-        self.logger=self.log.get_logger()
+    def __init__(self,Db):
+        # self.log=Log.get_log()
+        # self.logger=self.log.get_logger()
         self.db=None
         self.cursor=None
+        self.Db=Db
+        global host,username,password,port,database,config
+        host=localReadingConfig.get_DB(self.Db,'host')
+        username=localReadingConfig.get_DB(self.Db,'username')
+        password=localReadingConfig.get_DB(self.Db,'password')
+        port=localReadingConfig.get_DB(self.Db,'port')
+        database=localReadingConfig.get_DB(self.Db,'database')
+        config={
+            'host':str(host),
+            'user':username,
+            'password':password,
+            'port':int(port),
+            'db':database
+        }
 
     def connectDB(self):
         try:

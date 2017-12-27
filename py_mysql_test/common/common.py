@@ -57,7 +57,7 @@ def get_sql(database_name,table_name,sql_id):
     return sql
 
 
-
+get_sql()
 
 
 

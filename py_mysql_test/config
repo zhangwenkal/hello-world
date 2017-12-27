@@ -1,7 +1,7 @@
 [DATABASE1]
 host=localhost
 username=jsds
-password=123456
+password=jsds
 port=3306
 database=1211117
 
