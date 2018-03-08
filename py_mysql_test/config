@@ -1,0 +1,13 @@
+[DATABASE1]
+host=localhost
+username=jsds
+password=jsds
+port=3306
+database=1211117
+
+[DATABASE2]
+host=localhost
+username=jsds
+password=123456
+port=3306
+database=jsds_zs4s_1009

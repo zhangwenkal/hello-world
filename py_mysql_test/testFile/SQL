@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<page>
+    <database name="test">
+        <table name="testtable">
+            <sql id="select_member">
+                select * from t_base_person where  member_id=%s
+            </sql>
+        </table>
+
+        <table name="testtable">
+            <sql id="delete_user">
+                Delete  From t_park_record_in where email=%s
+            </sql>
+        </table>
+    </database>
+</page>
